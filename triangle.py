@@ -1,4 +1,4 @@
-#Creating two dimensional shapes with Python
+#Creating a two dimensional shape with Python
 print("   /|")
 print("  / |")
 print(" /  |")
