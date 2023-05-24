@@ -1,35 +1,25 @@
+import os
+from email.message import EmailMessage
+import ssl
 import smtplib
-from email import encoders
-from email.mime.text import MIMEText
-from email.mime.base import MIMEBase
-from email.mime.multipart import MIMEMultipart
 
-server = smtplib.SMTP('smtp.gmail.com', 25)
+email_sender = #insert sender email here.
+email_password = #insert password here.
+email_receiver = #insert recipient email here.
 
-server.ehlo()
+subject = "Automated Email"
+body = """
+Automated Email test successful!
+"""
 
+em = EmailMessage()
+em["From"] = email_sender
+em["To"] = email_receiver
+em["Subject"] = subject
+em.set_content(body)
 
-server.login("test@gmail.com", "password123")
+context = ssl.create_default_context()
 
-msg = MIMEMultipart()
-msg["From"] = "test1"
-msg["To"] = "test@yahoo.com"
-msg["Subject"] = "Just a test."
-
-with open("message.txt", "r") as f:
-    message = f.read()
-
-msg.attach(MIMEText(message, "plain"))
-
-filename = ""
-attachment = open(filename, "rb")
-
-p = MIMEBase("application", "octet-stream")
-p.set_payload(attachment.read())
-
-encoders.encode_base64(p)
-p.add_header("Content-Disposition", f' attachment; filename={filename}')
-msg.attach(p)
-
-text = msg.as_string()
-server.sendmail("test@gmail.com", "test@yahoo.com", text)
+with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as smtp:
+    smtp.login(email_sender, email_password)
+    smtp.sendmail(email_sender, email_receiver, em.as_string())
