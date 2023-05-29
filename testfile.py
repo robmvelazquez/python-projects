@@ -22,7 +22,7 @@ print(concatenated)
 print(concatenated2)
 
 
-# Each time an iterator is called, it returns the next element
+# Each time an iterator is called, it returns the next element.
 print("\nThis is a basic iterable.")
 my_list1 = [1, 2, 3, 4]
 my_iterator = iter(my_list1)
