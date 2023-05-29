@@ -31,7 +31,7 @@ print(next(my_iterator))
 print(next(my_iterator))
 
 
-# namedtuple is a function from the collections module
+# namedtuple is a function from the collections module.
 print("\nThis is an example of a namedtuple.")
 Point = namedtuple('Point', 'x,y')
 pt = Point(1, -4)
