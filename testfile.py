@@ -1,4 +1,5 @@
 import collections
+import functools
 from collections import namedtuple
 import itertools
 
@@ -179,6 +180,12 @@ for num in doubled_numbers:
 
 
 
+print("\nThis is a method to double list(a) without using the map lambda function.")
+c = [x*2 for x in a]
+print(c)
+
+
+
 # The filter function is used to apply a given function to each element in an iterable.
 # filter syntax == filter(function, iterable)
 print("\nThis is an example of the filter function.")
@@ -191,3 +198,13 @@ print(list(b))
 print("\nThis is a method to filter without using the filter lambda function.")
 c = [x for x in a if x%2==0]
 print(c)
+
+
+"""
+The reduce function is used to apply a function to a sequence of elements and reduce
+sequence to a single value.
+reduce syntax == reduce(function, iterable) 
+"""
+a = [1, 2, 3, 4]
+product_a = functools.reduce(lambda x, y: x*y, a)
+print("\nThis is an example of the reduce function: " + str(product_a))
