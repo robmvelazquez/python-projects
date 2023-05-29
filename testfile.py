@@ -134,9 +134,8 @@ points2d_sorted = sorted(points2d, key=lambda x: x[0] + x[1])
 print(points2d)
 print(points2d_sorted)
 
-
-# map syntax
-# map(function, iterable)
+# The map function is used to apply a specific function to each item of an iterable.
+# map syntax == map(function, iterable)
 print("\nThis is an example of the map function.")
 a = [1, 2, 3, 4, 5]
 b = map(lambda x: x*2, a)
@@ -155,3 +154,17 @@ doubled_numbers = map(double, numbers)
 
 for num in doubled_numbers:
     print(num)
+
+
+# filter syntax
+# filter(function, iterable)
+print("\nThis is an example of the filter function.")
+a = [1, 2, 3, 4, 5, 6]
+# the % symbol represents the modulus operator that calculates the remainder.
+# in this example, x%2==0 means that if x / 2 = remainder 0, then the condition is True.
+b = filter(lambda x: x%2==0, a)
+print(list(b))
+
+print("\nThis is a method to filter without using the filter lambda function.")
+c = [x for x in a if x%==0]
+print(c)
