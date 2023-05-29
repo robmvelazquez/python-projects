@@ -60,7 +60,7 @@ print("\nThis is an example of combinations with replacements.")
 print(list(comb_wr))
 
 
-# accumulate will calculate the sum of the elements
+# accumulate will calculate the sum of the elements.
 acc = itertools.accumulate(my_list1)
 print("\nThis is an example of the accumulate function.")
 print(my_list1)
