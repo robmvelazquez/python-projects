@@ -6,6 +6,7 @@ def display_menu():
     print("3. Mark task as completed")
     print("4. Remove completed Tasks")
     print("5. Exit")
+    print("6. Load File")
 
 # This function will add a task into the Todo list.
 def add_task(todo_list):
@@ -56,6 +57,18 @@ def save_tasks(todo_list):
         print(f"Tasks saved to '{filename}'.")
 
 
+def load_tasks(todo_list):
+    filename = input("Enter the filename to load tasks from: ")
+    todo_list.clear()
+    try:
+        with open(filename, "r") as file:
+            for line in file:
+                task = line.strip()
+                todo_list.append(task)
+            print(f"Tasks loaded from '{filename}'.")
+    except FileNotFoundError:
+        print(f"File '{filename}' not found.")
+
 
 # This function initializes the application.
 def todo_list_app():
@@ -76,6 +89,8 @@ def todo_list_app():
         elif choice == '5':
             save_tasks(todo_list)
             break
+        elif choice == '6':
+            load_tasks(todo_list)
         else:
             print("\nInvalid choice. Please try again")
 
