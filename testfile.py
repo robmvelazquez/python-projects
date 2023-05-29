@@ -100,7 +100,23 @@ for i in itertools.cycle(a):
 
 This is an example of the repeat function. It will continue to loop forever, unless given an
 escape argument. """
-print("\nThis is an example of a repeat function.")
+print("\nThis is an example of the repeat function.")
 a = [1, 2, 3]
 for i in itertools.repeat(1, 4):
     print(i)
+
+"""
+Here's the general syntax of a lambda function: 
+lambda parameter: expression
+
+Instead of creating a standard function such as this one:
+def multiply(x, y):
+    return x * y
+print(multiply(3,4))    
+    
+We can use a lambda function such as the one below to generate a simple,
+anonymous, concise, readable function that reduces complexity.
+"""
+print("\nThis is an example of a lambda function")
+multiply_lambda = lambda x, y: x * y
+print(multiply_lambda(3,4))
