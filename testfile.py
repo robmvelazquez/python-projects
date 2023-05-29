@@ -90,9 +90,17 @@ for i in itertools.count(10):
     print(i)
     if i == 15:
         break
+
 """ This is an example of the cycle function. It will continue to loop forever, because
 it is an infinite iterator.
 a = [1, 2, 3]
 for i in itertools.cycle(a):
     print(i)
-"""
+
+
+This is an example of the repeat function. It will continue to loop forever, unless given an
+escape argument. """
+print("\nThis is an example of a repeat function.")
+a = [1, 2, 3]
+for i in itertools.repeat(1, 4):
+    print(i)
