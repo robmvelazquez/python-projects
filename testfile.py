@@ -117,7 +117,7 @@ print(multiply(3,4))
 We can use a lambda function such as the one below to generate a simple,
 anonymous, concise, readable function that reduces complexity.
 """
-print("\nThis is an example of a lambda function")
+print("\nThis is an example of a lambda function.")
 multiply_lambda = lambda x, y: x * y
 print(multiply_lambda(3,4))
 
