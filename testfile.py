@@ -75,3 +75,24 @@ group_obj = itertools.groupby(my_list1, key=smaller_than_3)
 for key, value in group_obj:
     print(key, list(value))
 
+# another example of using the groupby function but with age.
+print("\nUsing the groupby function to group elements by age.")
+persons = [{'name': 'Rob', 'age': 25}, {'name': 'Micah', 'age': 25},
+           {'name': 'Tali', 'age': 27}, {'name': 'Veronica', 'age': 24}]
+
+group_obj1 = itertools.groupby(persons, key=lambda x: x['age'])
+for key, value in group_obj1:
+    print(key, list(value))
+
+# count function
+print("\nThis is an example of the count function.")
+for i in itertools.count(10):
+    print(i)
+    if i == 15:
+        break
+""" This is an example of the cycle function. It will continue to loop forever, because
+it is an infinite iterator.
+a = [1, 2, 3]
+for i in itertools.cycle(a):
+    print(i)
+"""
