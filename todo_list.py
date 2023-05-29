@@ -33,19 +33,31 @@ def mark_task_completed(todo_list):
         print("Invalid task number.")
     else:
         print(f"Marked task '{todo_list[task_index]}' as completed.")
-        todo_list.pop(task_index)
+        completed_task = todo_list.pop(task_index)
 
 
 # This function will delete completed tasks from the list.
 def remove_completed_tasks(todo_list):
     if len(todo_list) == 0:
         print("No tasks found.")
+    else:
+        for task in todo_list[:]:
+            if task['completed']:
+                todo_list.remove(task)
+        print("Completed task removed.")
+
+# This is the main program's loop.
+
+def save_tasks(todo_list):
+    filename = input("Enter a filename to save the tasks: ")
+    with open(filename, "w") as file:
+        for task in todo_list:
+            file.write(task + "\n")
+        print(f"Tasks saved to '{filename}'.")
 
 
 
-# This function will be used to remove completed tasks.
-
-#This function initializes the application.
+# This function initializes the application.
 def todo_list_app():
     todo_list = []
 
@@ -61,6 +73,9 @@ def todo_list_app():
             mark_task_completed(todo_list)
         elif choice == '4':
             remove_completed_tasks(todo_list)
+        elif choice == '5':
+            save_tasks(todo_list)
+            break
         else:
             print("\nInvalid choice. Please try again")
 
