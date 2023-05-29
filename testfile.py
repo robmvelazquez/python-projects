@@ -120,3 +120,38 @@ anonymous, concise, readable function that reduces complexity.
 print("\nThis is an example of a lambda function")
 multiply_lambda = lambda x, y: x * y
 print(multiply_lambda(3,4))
+
+
+print("\nThis sorted lambda function will sort the tuples by their 'y' values.")
+points2d = [(1, 2), (15, 1), (5, -1), (10, 4)]
+points2d_sorted = sorted(points2d, key=lambda x: x[1])
+print(points2d)
+print(points2d_sorted)
+
+print("\n# this sorted lambda function will sort by the sum of each tuple.")
+points2d = [(1, 2), (15, 1), (5, -1), (10, 4)]
+points2d_sorted = sorted(points2d, key=lambda x: x[0] + x[1])
+print(points2d)
+print(points2d_sorted)
+
+
+# map syntax
+# map(function, iterable)
+print("\nThis is an example of the map function.")
+a = [1, 2, 3, 4, 5]
+b = map(lambda x: x*2, a)
+print(list(b))
+
+
+
+print("\nThis is an example of using the map function to double a number.")
+# Define a function to double a number using the map function.
+def double(x):
+    return x * 2
+
+# Apply the 'double' function to each element in the list.
+numbers = [1, 2, 3, 4, 5]
+doubled_numbers = map(double, numbers)
+
+for num in doubled_numbers:
+    print(num)
