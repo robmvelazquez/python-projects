@@ -1,6 +1,7 @@
 import collections
 import functools
 import itertools
+import logging
 
 # These are examples of basic lists.
 basic_list1 = [1, 2, 3, 4, 5]
@@ -272,3 +273,14 @@ except ValueTooSmallError as e:
     print(e.message, e.value)
 
 """
+# import logging
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+                    datefmt='%m/%d/%Y %H:%M:%S')
+
+logging.debug('This is a debug message')
+logging.info('This is an info message')
+logging.warning('This is a warning message')
+logging.error('This is an error message')
+logging.critical('This is a critical message')
+
+import helper
