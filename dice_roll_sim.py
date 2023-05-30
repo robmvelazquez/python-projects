@@ -5,5 +5,5 @@ def roll_dice():
     result = random.randint(1, 6)
     return result
 
-# call the roll_dice() function to roll the die
+# call the roll_dice() function to roll the die.
 print("You rolled a", roll_dice())
