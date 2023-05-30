@@ -1,6 +1,7 @@
 import logging
 
 """
+# Use this to display a message.
 logger = logging.getLogger(__name__)
 # logger.propagate = False will stop the logger from propagating to the parent logger/handlers.
 logger.info('hello from helper')
