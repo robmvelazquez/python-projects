@@ -8,9 +8,10 @@ def display_menu():
 def create_workout(workout_scheduler):
     global workout
     weekdays = ('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday')
+    for day in weekdays:
+        print(day)
 
-    for item in weekdays:
-        print(weekdays)
+    print(weekdays)
 
     workout = input('Select a day of the week that you would like to complete this workout: ')
 
