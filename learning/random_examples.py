@@ -87,7 +87,7 @@ print(arr)
 # Testing numpy random seed method
 
 np.random.seed(1)
-print('Testing random seed method with numpy\n' + str(np.random.rand(3,3)))
+print(f'Testing random seed method with numpy {np.random.rand(3,3)}')
 np.random.seed(1)
 print(np.random.rand(3,3))
 
