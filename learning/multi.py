@@ -3,26 +3,28 @@ from multiprocessing import Process
 import os
 import time
 
+# This function will allow us to view the Python thread running in Task Manager
 def square_numbers():
     for i in range(100):
         i * i
         time.sleep(0.1)
 
-threads = []
-num_threads = os.cpu_count()
+if __name__ == "__main__":
+    threads = []
+    num_threads = 10
 
-# Create processes
+# Create threads
 for i in range(num_threads):
     t = Thread(target=square_numbers)
     threads.append(t)
 
 # Start
-for t in threads:
-    t.start()
+for thread in threads:
+    thread.start()
 
 # Join processes
-for t in threads:
-    t.join()
+for thread in threads:
+    thread.join()
 
 print('End main')
 
