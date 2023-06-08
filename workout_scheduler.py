@@ -2,31 +2,60 @@ def display_menu():
     print('1. Create a new workout.')
     print('2. Edit a workout.')
     print('3. Remove an exercise.')
-    print('4. Mark an excercise as complete.')
+    print('4. Mark an exercise as complete.')
     print('5. Review a previous workout.')
 
+
 def create_workout(workout_scheduler):
-    global workout
-    weekdays = ('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday')
-    for day in weekdays:
-        print(day)
+    print('Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday')
+    day_input = input('Select a day of the week that you would like to complete this workout (1-7): ')
+    try:
+        day = int(day_input)
+        if 1 <= day <= 7:
+            if day == 1:
+                workout = input('Enter a name for the workout you will perform on Sunday: ')
+                print('You entered', workout)
+            elif day == 2:
+                workout = input('Enter a name for the workout you will perform on Sunday: ')
+                print('You entered', workout)
+            elif day == 3:
+                workout = input('Enter a name for the workout you will perform on Sunday: ')
+                print('You entered', workout)
+            elif day == 4:
+                workout = input('Enter a name for the workout you will perform on Sunday: ')
+                print('You entered', workout)
+            elif day == 5:
+                workout = input('Enter a name for the workout you will perform on Sunday: ')
+                print('You entered', workout)
+            elif day == 6:
+                workout = input('Enter a name for the workout you will perform on Sunday: ')
+                print('You entered', workout)
+            elif day == 7:
+                workout = input('Enter a name for the workout you will perform on Sunday: ')
+                print('You entered', workout)
+            else:
+                print('Invalid entry, try again')
+    except ValueError:
+        print('Invalid input. Please enter a valid integer.')
 
-    print(weekdays)
 
-    workout = input('Select a day of the week that you would like to complete this workout: ')
 
 
 def edit_workout(workout_scheduler):
     edit = input('Select a workout you would like to edit: ')
 
+
 def remove_workout(workout_scheduler):
     remove = input('Select a workout you would like to remove: ')
+
 
 def complete_exercise(workout_scheduler):
     complete = input('Select a workout you would like to mark as completed: ')
 
+
 def review_workout(workout_scheduler):
     review = input('Select the week you would like to review: ')
+
 
 def workout_scheduler_app():
     workout_scheduler = []
