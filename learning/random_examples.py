@@ -2,6 +2,7 @@ import random
 import secrets
 import numpy as np
 
+# This program depicts the various use-cases for the random method
 # Testing random with a random range
 a = random.random()
 print('Testing random with a random range: ' + str(a))
