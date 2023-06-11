@@ -23,7 +23,7 @@ def display_menu():
     print('6. Create a new workout.')
 
 
-def todays_workout(workout_schedule):
+def todays_workout(workout_scheduler):
     if day_name == 'Monday':
         print(*monday)
     elif day_name == 'Tuesday':
@@ -40,10 +40,11 @@ def todays_workout(workout_schedule):
         print(*sunday)
 
 
+# This function allows the user to create a workout routine that will be saved for a specific day of the week
 def create_workout(workout_scheduler):
     for _ in days:
         print(_)
-    day_input = input('Select a day of the week that you would like to complete this workout (1-7): ')
+    day_input = input('Select a day of the week that you would like to ')
     try:
         day = int(day_input)
         if 1 <= day <= 7:
@@ -81,9 +82,32 @@ def create_workout(workout_scheduler):
         print('Invalid input. Please enter a valid integer.')
 
 
+# This function allows the user to edit previous workout routines.
 def edit_workout(workout_scheduler):
-    edit = input('Select a workout you would like to edit: ')
+    for _ in days:
+        print(_)
+    day_input = input('Select a day of the week that you would like to ')
+    try:
+        day = int(day_input)
+        if 1 <= day <= 7:
+            if day == 1:
 
+            elif day == 2:
+
+            elif day == 3:
+
+            elif day == 4:
+
+            elif day == 5:
+
+            elif day == 6:
+
+            elif day == 7:
+
+            else:
+                print('Invalid entry, try again')
+    except ValueError:
+        print('Invalid input. Please enter a valid integer.')
 
 def remove_workout(workout_scheduler):
     remove = input('Select a workout you would like to remove: ')
@@ -98,7 +122,7 @@ def review_workout(workout_scheduler):
 
 
 def workout_scheduler_app():
-
+    workout_scheduler = []
     while True:
         print('Hello and happy', day_name, '!')
         display_menu()
