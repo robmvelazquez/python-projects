@@ -179,13 +179,41 @@ def remove_workout(workout_scheduler):
                 else:
                     print('Invalid index, try again.')
             elif day == 4:
-                thursday.remove(workout)
+                print('Workouts for Thursday:\n')
+                for i, workout in enumerate(thursday):
+                    print(f'{i + 1}. {workout}')
+                index = int(input('Select the index of the workout you would like to remove.\n')) - 1
+                if 0 <= index < len(thursday):
+                    thursday.pop(index)
+                else:
+                    print('Invalid index, try again.')
             elif day == 5:
-                friday.remove(workout)
+                print('Workouts for Friday:\n')
+                for i, workout in enumerate(friday):
+                    print(f'{i + 1}. {workout}')
+                index = int(input('Select the index of the workout you would like to remove.\n')) - 1
+                if 0 <= index < len(friday):
+                    friday.pop(index)
+                else:
+                    print('Invalid index, try again.')
             elif day == 6:
-                saturday.remove(workout)
+                print('Workouts for Saturday:\n')
+                for i, workout in enumerate(saturday):
+                    print(f'{i + 1}. {workout}')
+                index = int(input('Select the index of the workout you would like to remove.\n')) - 1
+                if 0 <= index < len(saturday):
+                    saturday.pop(index)
+                else:
+                    print('Invalid index, try again.')
             elif day == 7:
-                sunday.remove(workout)
+                print('Workouts for Sunday:\n')
+                for i, workout in enumerate(sunday):
+                    print(f'{i + 1}. {workout}')
+                index = int(input('Select the index of the workout you would like to remove.\n')) - 1
+                if 0 <= index < len(sunday):
+                    sunday.pop(index)
+                else:
+                    print('Invalid index, try again.')
             else:
                 print('Invalid entry, try again')
     except ValueError:
