@@ -12,8 +12,10 @@ thursday = []
 friday = []
 saturday = []
 sunday = []
+
 workout = ""
 day_input = ""
+capitalized_input = ""
 
 
 def display_menu():
@@ -54,25 +56,25 @@ def create_workout(workout_scheduler):
         if 1 <= day <= 7:
             if day == 1:
                 enter_workout(workout_scheduler)
-                monday.append(workout)
+                monday.append(capitalized_input)
             elif day == 2:
                 enter_workout(workout_scheduler)
-                tuesday.append(workout)
+                tuesday.append(capitalized_input)
             elif day == 3:
                 enter_workout(workout_scheduler)
-                wednesday.append(workout)
+                wednesday.append(capitalized_input)
             elif day == 4:
                 enter_workout(workout_scheduler)
-                thursday.append(workout)
+                thursday.append(capitalized_input)
             elif day == 5:
                 enter_workout(workout_scheduler)
-                friday.append(workout)
+                friday.append(capitalized_input)
             elif day == 6:
                 enter_workout(workout_scheduler)
-                saturday.append(workout)
+                saturday.append(capitalized_input)
             elif day == 7:
                 enter_workout(workout_scheduler)
-                sunday.append(workout)
+                sunday.append(capitalized_input)
             else:
                 print('Invalid entry, try again')
     except ValueError:
@@ -82,12 +84,14 @@ def create_workout(workout_scheduler):
 def enter_workout(workout_scheduler):
     global workout
     global day_input
+    global capitalized_input
     try:
         day_index = int(day_input) - 1  # Adjusting index to match 0-based index
         if 0 <= day_index < len(days):
             day_name = days[day_index]
             workout = input('Enter a name for the workout you will perform on ' + day_name + ': \n')
-            print('You entered', workout, 'as the workout you would like to perform on ' + day_name + '.\n')
+            capitalized_input = workout.title()
+            print('You entered', capitalized_input, 'as the workout you would like to perform on ' + day_name + '.\n')
         else:
             print('Invalid day index. Please enter a valid index.')
     except ValueError:
