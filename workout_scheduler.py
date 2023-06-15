@@ -13,6 +13,7 @@ friday = []
 saturday = []
 sunday = []
 workout = ""
+day_input = ""
 
 def display_menu():
     print('1. View Today\'s Workout.')
@@ -43,9 +44,10 @@ def todays_workout(workout_scheduler):
 # This function allows the user to create a workout routine that will be saved for a specific day of the week
 def create_workout(workout_scheduler):
     global workout
+    global day_input
     for _ in days:
         print(_)
-    day_input = input('Select a day of the week that you would like to ')
+    day_input = input('Select a day of the week that you would like to perform this workout: (1 - 7)\n')
     try:
         day = int(day_input)
         if 1 <= day <= 7:
@@ -78,8 +80,17 @@ def create_workout(workout_scheduler):
 
 def enter_workout(workout_scheduler):
     global workout
-    workout = input('Enter a name for the workout you will perform on ' + day_name + ': ')
-    print('You entered', workout, 'as the workout you would like to perform.')
+    global day_input
+    try:
+        day_index = int(day_input) - 1  # Adjusting index to match 0-based index
+        if 0 <= day_index < len(days):
+            day_name = days[day_index]
+            workout = input('Enter a name for the workout you will perform on ' + day_name + ': \n')
+            print('You entered', workout, 'as the workout you would like to perform on ' + day_name + '.\n')
+        else:
+            print('Invalid day index. Please enter a valid index.')
+    except ValueError:
+        print('Invalid input. Please enter a valid integer.')
 
 
 # This function allows the user to edit previous workout routines.
@@ -146,9 +157,9 @@ def review_workout(workout_scheduler):
 def workout_scheduler_app():
     workout_scheduler = []
     while True:
-        print('Hello and happy', day_name, '!')
+        print('\nHello and Happy', day_name, '!\n')
         display_menu()
-        choice = input("Enter your choice (1-5): ")
+        choice = input("\nEnter your choice (1-5): ")
         
         if choice == '1':
             todays_workout(workout_scheduler)
