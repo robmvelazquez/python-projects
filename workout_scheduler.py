@@ -52,31 +52,24 @@ def create_workout(workout_scheduler):
             if day == 1:
                 enter_workout(workout_scheduler)
                 monday.append(workout)
-                print('You entered', workout, 'as the workout you would like to perform.')
             elif day == 2:
                 enter_workout(workout_scheduler)
                 tuesday.append(workout)
-                print('You entered', workout, 'as the workout you would like to perform.')
             elif day == 3:
                 enter_workout(workout_scheduler)
                 wednesday.append(workout)
-                print('You entered', workout, 'as the workout you would like to perform.')
             elif day == 4:
                 enter_workout(workout_scheduler)
                 thursday.append(workout)
-                print('You entered', workout, 'as the workout you would like to perform.')
             elif day == 5:
                 enter_workout(workout_scheduler)
                 friday.append(workout)
-                enter_workout(workout_scheduler)
             elif day == 6:
                 enter_workout(workout_scheduler)
                 saturday.append(workout)
-                print('You entered', workout, 'as the workout you would like to perform.')
             elif day == 7:
                 enter_workout(workout_scheduler)
                 sunday.append(workout)
-                print('You entered', workout, 'as the workout you would like to perform.')
             else:
                 print('Invalid entry, try again')
     except ValueError:
@@ -86,6 +79,7 @@ def create_workout(workout_scheduler):
 def enter_workout(workout_scheduler):
     global workout
     workout = input('Enter a name for the workout you will perform on ' + day_name + ': ')
+    print('You entered', workout, 'as the workout you would like to perform.')
 
 
 # This function allows the user to edit previous workout routines.
@@ -99,37 +93,37 @@ def edit_workout(workout_scheduler):
         if 1 <= day <= 7:
             if day == 1:
                 monday.remove(workout)
-                workout = input('Enter a name for the workout you will perform on Monday: ')
+                enter_workout(workout_scheduler)
                 monday.append(workout)
                 print('You entered', workout)
             elif day == 2:
                 tuesday.remove(workout)
-                workout = input('Enter a name for the workout you will perform on' + day_name + ': ')
+                enter_workout(workout_scheduler)
                 tuesday.append(workout)
                 print('You entered', workout)
             elif day == 3:
                 wednesday.remove(workout)
-                workout = input('Enter a name for the workout you will perform on Sunday: ')
+                enter_workout(workout_scheduler)
                 wednesday.append(workout)
                 print('You entered', workout)
             elif day == 4:
                 thursday.remove(workout)
-                workout = input('Enter a name for the workout you will perform on Sunday: ')
+                enter_workout(workout_scheduler)
                 thursday.append(workout)
                 print('You entered', workout)
             elif day == 5:
                 friday.remove(workout)
-                workout = input('Enter a name for the workout you will perform on ' + day_name + ': ')
+                enter_workout(workout_scheduler)
                 friday.append(workout)
                 print('You entered', workout)
             elif day == 6:
                 saturday.remove(workout)
-                workout = input('Enter a name for the workout you will perform on Sunday: ')
+                enter_workout(workout_scheduler)
                 saturday.append(workout)
                 print('You entered', workout)
             elif day == 7:
                 sunday.remove(workout)
-                workout = input('Enter a name for the workout you will perform on Sunday: ')
+                enter_workout(workout_scheduler)
                 sunday.append(workout)
                 print('You entered', workout)
             else:
