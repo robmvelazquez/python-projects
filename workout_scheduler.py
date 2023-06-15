@@ -15,6 +15,7 @@ sunday = []
 workout = ""
 day_input = ""
 
+
 def display_menu():
     print('1. View Today\'s Workout.')
     print('2. Edit a workout.')
@@ -26,19 +27,19 @@ def display_menu():
 
 def todays_workout(workout_scheduler):
     if day_name == 'Monday':
-        print(*monday)
+        print('You will perform the following workouts today:\n', *monday)
     elif day_name == 'Tuesday':
-        print(*tuesday)
+        print('You will perform the following workouts today:\n', *tuesday)
     elif day_name == 'Wednesday':
-        print(*wednesday)
+        print('You will perform the following workouts today:\n', *wednesday)
     elif day_name == 'Thursday':
-        print(*thursday)
+        print('You will perform the following workouts today:\n', *thursday)
     elif day_name == 'Friday':
-        print(*friday)
+        print('You will perform the following workouts today:\n', *friday)
     elif day_name == 'Saturday':
-        print(*saturday)
+        print('You will perform the following workouts today:\n', *saturday)
     elif day_name == 'Sunday':
-        print(*sunday)
+        print('You will perform the following workouts today:\n', *sunday)
 
 
 # This function allows the user to create a workout routine that will be saved for a specific day of the week
@@ -96,6 +97,7 @@ def enter_workout(workout_scheduler):
 # This function allows the user to edit previous workout routines.
 def edit_workout(workout_scheduler):
     global workout
+    global day_input
     for _ in days:
         print(_)
     day_input = input('Select a day of the week that you would like to edit: ')
@@ -106,44 +108,84 @@ def edit_workout(workout_scheduler):
                 monday.remove(workout)
                 enter_workout(workout_scheduler)
                 monday.append(workout)
-                print('You entered', workout)
             elif day == 2:
                 tuesday.remove(workout)
                 enter_workout(workout_scheduler)
                 tuesday.append(workout)
-                print('You entered', workout)
             elif day == 3:
                 wednesday.remove(workout)
                 enter_workout(workout_scheduler)
                 wednesday.append(workout)
-                print('You entered', workout)
             elif day == 4:
                 thursday.remove(workout)
                 enter_workout(workout_scheduler)
                 thursday.append(workout)
-                print('You entered', workout)
             elif day == 5:
                 friday.remove(workout)
                 enter_workout(workout_scheduler)
                 friday.append(workout)
-                print('You entered', workout)
             elif day == 6:
                 saturday.remove(workout)
                 enter_workout(workout_scheduler)
                 saturday.append(workout)
-                print('You entered', workout)
             elif day == 7:
                 sunday.remove(workout)
                 enter_workout(workout_scheduler)
                 sunday.append(workout)
-                print('You entered', workout)
             else:
                 print('Invalid entry, try again')
     except ValueError:
         print('Invalid input. Please enter a valid integer.')
 
+
 def remove_workout(workout_scheduler):
-    remove = input('Select a workout you would like to remove: ')
+    global workout
+    global day_input
+    for _ in days:
+        print(_)
+    day_input = input('Select a day of the week that you would like to edit: ')
+    try:
+        day = int(day_input)
+        if 1 <= day <= 7:
+            if day == 1:
+                print('Workouts for Monday:\n')
+                for i, workout in enumerate(monday):
+                    print(f'{i + 1}. {workout}')
+                index = int(input('Select the index of the workout you would like to remove.\n')) - 1
+                if 0 <= index < len(monday):
+                    monday.pop(index)
+                else:
+                    print('Invalid index, try again.')
+            elif day == 2:
+                print('Workouts for Tuesday:\n')
+                for i, workout in enumerate(tuesday):
+                    print(f'{i + 1}. {workout}')
+                index = int(input('Select the index of the workout you would like to remove.\n')) - 1
+                if 0 <= index < len(tuesday):
+                    tuesday.pop(index)
+                else:
+                    print('Invalid index, try again.')
+            elif day == 3:
+                print('Workouts for Wednesday:\n')
+                for i, workout in enumerate(wednesday):
+                    print(f'{i + 1}. {workout}')
+                index = int(input('Select the index of the workout you would like to remove.\n')) - 1
+                if 0 <= index < len(wednesday):
+                    wednesday.pop(index)
+                else:
+                    print('Invalid index, try again.')
+            elif day == 4:
+                thursday.remove(workout)
+            elif day == 5:
+                friday.remove(workout)
+            elif day == 6:
+                saturday.remove(workout)
+            elif day == 7:
+                sunday.remove(workout)
+            else:
+                print('Invalid entry, try again')
+    except ValueError:
+        print('Invalid input. Please enter a valid integer.')
 
 
 def complete_exercise(workout_scheduler):
