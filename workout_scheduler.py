@@ -54,27 +54,27 @@ def create_workout(workout_scheduler):
                 monday.append(workout)
                 print('You entered', workout, 'as the workout you would like to perform.')
             elif day == 2:
-                workout = input('Enter a name for the workout you will perform on' + day_name + ': ')
+                enter_workout(workout_scheduler)
                 tuesday.append(workout)
                 print('You entered', workout, 'as the workout you would like to perform.')
             elif day == 3:
-                workout = input('Enter a name for the workout you will perform on Sunday: ')
+                enter_workout(workout_scheduler)
                 wednesday.append(workout)
                 print('You entered', workout, 'as the workout you would like to perform.')
             elif day == 4:
-                workout = input('Enter a name for the workout you will perform on Sunday: ')
+                enter_workout(workout_scheduler)
                 thursday.append(workout)
                 print('You entered', workout, 'as the workout you would like to perform.')
             elif day == 5:
-                workout = input('Enter a name for the workout you will perform on ' + day_name + ': ')
+                enter_workout(workout_scheduler)
                 friday.append(workout)
-                print('You entered', workout, 'as the workout you would like to perform.')
+                enter_workout(workout_scheduler)
             elif day == 6:
-                workout = input('Enter a name for the workout you will perform on Sunday: ')
+                enter_workout(workout_scheduler)
                 saturday.append(workout)
                 print('You entered', workout, 'as the workout you would like to perform.')
             elif day == 7:
-                workout = input('Enter a name for the workout you will perform on Sunday: ')
+                enter_workout(workout_scheduler)
                 sunday.append(workout)
                 print('You entered', workout, 'as the workout you would like to perform.')
             else:
@@ -85,7 +85,7 @@ def create_workout(workout_scheduler):
 
 def enter_workout(workout_scheduler):
     global workout
-    workout = input('Enter a name for the workout you will perform on Sunday: ')
+    workout = input('Enter a name for the workout you will perform on ' + day_name + ': ')
 
 
 # This function allows the user to edit previous workout routines.
