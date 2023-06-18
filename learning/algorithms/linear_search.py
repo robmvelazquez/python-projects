@@ -21,7 +21,7 @@ def verify(index):
         print('Target not found in list.')
 
 
-# This variable defines the elements within the list 'numbers'
+# This variable defines the elements within the list 'numbers'.
 numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 result = linear_search(numbers, 6)
