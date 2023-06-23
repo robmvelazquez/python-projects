@@ -1,5 +1,11 @@
-# Linked lists do not have index positions.
-# An object for storing a single node of a linked list. Models data and the next node in the list.
+"""
+Linked lists do not have index positions.
+An object for storing a single node of a linked list. Models data and the next node in the list.
+L/L are used for dynamic memory allocation, stack and queue, 'undo' functionality, hash tables,
+and graphs.
+"""
+
+
 class Node:
     data = None
     next_node = None
