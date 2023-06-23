@@ -1,4 +1,6 @@
-# Stack implementation in python
+"""
+Stack implementation in python. A stack is a linear data structure that follows the LIFO rule.
+"""
 
 
 # Creating a stack
