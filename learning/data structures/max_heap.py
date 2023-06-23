@@ -3,7 +3,9 @@ Max-Heap data structures are used during priority queue, Dijkstra's Algorithm, a
 """
 
 
+# Function to heapify the tree
 def heapify(arr, n, i):
+    # Find the largest among root, left child and right child
     largest = 1
     l = 2 * i + 1
     r = 2 * i + 2
@@ -14,10 +16,12 @@ def heapify(arr, n, i):
     if r < n and arr[largest] < arr[r]:
         largest = r
 
+    # Swap and continue heapifying if root is not largest
     if largest != i:
         arr[i],arr[largest] = arr[largest], arr[i]
         heapify(arr, n, largest)
 
+# Function to insert an element into the tree
 def insert(array, newNum):
     size = len(array)
     if size == 0:
@@ -28,6 +32,7 @@ def insert(array, newNum):
             heapify(array, size, i)
 
 
+# Function to delete an element from the tree
 def deleteNode(array, num)
     size = len(array)
     i = 0
