@@ -1,0 +1,7 @@
+"""
+Creation of a doubly linked list in Python. Insertion can occur during the beginning, between
+nodes, or at the end of the linked list. Applications include the redo/undo functionality as well as
+forward and backward navigation in browsers.
+"""
+
+
