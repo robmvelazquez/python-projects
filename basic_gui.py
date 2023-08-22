@@ -1,3 +1,4 @@
+# This is a basic GUI program.
 import tkinter as tk
 
 # Create the main window
