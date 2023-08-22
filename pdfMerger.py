@@ -1,3 +1,5 @@
+# This program merges two or more PDF files into a singular PDF.
+
 import PyPDF2
 import sys
 import os
